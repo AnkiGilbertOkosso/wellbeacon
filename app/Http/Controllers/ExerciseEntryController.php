@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ExerciseEntryController extends Controller
 {
+    public function index()
+    {
+        $exerciseEntries = ExerciseEntry::orderBy('created_at', 'desc')->get();
+
+        return view('exercise', ['exerciseEntries' => $exerciseEntries]);
+    }
     public function create()
     {
         return view('exercise_entries.create');

@@ -19,4 +19,8 @@ class ExerciseEntry extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function getTotalCaloriesBurned()
+    {
+        return $this->calorie_expenditure;
+    }
 }

@@ -20,4 +20,9 @@ class FoodEntry extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getTotalCaloriesConsumed()
+    {
+        return $this->quantity * $this->calorie_value;
+    }
 }

@@ -32,7 +32,7 @@
         <ul class="mt-4">
             <span class="text-gray-400 font-bold">Activities</span>
             <li class="mb-1 group">
-                <a href=""
+                <a href="{{ route('dashboard') }}"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class="ri-home-2-line mr-3 text-lg"></i>
                     <span class="text-sm">Dashboard</span>
@@ -57,14 +57,14 @@
                 </ul>
             </li>
             <li class="mb-1 group">
-                <a href=""
+                <a href="{{ route('food') }}"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class='bx bxs-bowl-hot mr-3 text-lg' ></i>
                     <span class="text-sm">Food</span>
                 </a>
             </li>
             <li class="mb-1 group">
-                <a href=""
+                <a href=" {{ route('exercise') }}"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class='bx bx-list-ul mr-3 text-lg'></i>
                     <span class="text-sm">Exercise</span>

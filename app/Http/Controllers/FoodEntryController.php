@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class FoodEntryController extends Controller
 {
+    public function index()
+    {
+        $foodEntries = FoodEntry::orderBy('created_at', 'desc')->get();
+
+        return view('food', ['foodEntries' => $foodEntries]);
+    }
     public function create()
     {
         return view('food_entries.create');
