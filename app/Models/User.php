@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'calorie_goal',
         'email',
         'password',
     ];
@@ -42,4 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function foodEntries()
+    {
+        return $this->hasMany(FoodEntry::class);
+    }
+
+    public function exerciseEntries()
+    {
+        return $this->hasMany(ExerciseEntry::class);
+    }
 }
