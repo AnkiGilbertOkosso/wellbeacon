@@ -41,7 +41,7 @@
             <li class="mb-1 group">
                 <a href=""
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                    <i class='bx bxs-grid-alt mr-3 text-lg' ></i>
+                    <i class='bx bxs-grid-alt mr-3 text-lg'></i>
                     <span class="text-sm">Analytics</span>
                     <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
                 </a>
@@ -57,14 +57,14 @@
                 </ul>
             </li>
             <li class="mb-1 group">
-                <a href="{{ route('food') }}"
+                <a href="#"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                    <i class='bx bxs-bowl-hot mr-3 text-lg' ></i>
+                    <i class='bx bxs-bowl-hot mr-3 text-lg'></i>
                     <span class="text-sm">Food</span>
                 </a>
             </li>
             <li class="mb-1 group">
-                <a href=" {{ route('exercise') }}"
+                <a href="#"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class='bx bx-list-ul mr-3 text-lg'></i>
                     <span class="text-sm">Exercise</span>
@@ -73,13 +73,13 @@
             <li class="mb-1 group">
                 <a href=""
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                    <i class='bx bx-task mr-3 text-lg' ></i>
+                    <i class='bx bx-task mr-3 text-lg'></i>
                     <span class="text-sm">Task</span>
                 </a>
             </li>
             <span class="text-gray-400 font-bold">Blog</span>
             <li class="mb-1 group">
-                <a href=""
+                <a href="{{ route('post.index') }}"
                     class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
                     <i class='bx bxl-blogger mr-3 text-lg'></i>
                     <span class="text-sm">Post</span>
@@ -87,8 +87,9 @@
                 </a>
                 <ul class="pl-7 mt-2 hidden group-[.selected]:block">
                     <li class="mb-4">
-                        <a href=""
-                            class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">All</a>
+                        <a href="{{ route('post.index') }}"
+                            class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">All
+                            Post</a>
                     </li>
                     <li class="mb-4">
                         <a href=""
@@ -310,8 +311,7 @@
                     <button type="button" class="dropdown-toggle flex items-center">
                         <div class="flex-shrink-0 w-10 h-10 relative">
                             <div class="p-1 bg-white rounded-full focus:outline-none focus:ring">
-                                <img class="w-8 h-8 rounded-full"
-                                    src="{{ Auth::user()->profile_photo_url }}"
+                                <img class="w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
                                     alt="{{ Auth::user()->name }}" />
                                 <div
                                     class="top-0 left-7 absolute w-3 h-3 bg-lime-400 border-2 border-white rounded-full animate-ping">
@@ -333,7 +333,7 @@
                                 class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Home</a>
                         </li>
                         <li>
-                            <a href=""  @click="open = false" @focus="open = true" @focusout="open = false"
+                            <a href="" @click="open = false" @focus="open = true" @focusout="open = false"
                                 class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50">Settings</a>
                         </li>
                         <li>
@@ -342,7 +342,8 @@
                                 <a role="menuitem"
                                     class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50 cursor-pointer"
                                     onclick="event.preventDefault();
-                                    this.closest('form').submit();" href="{{ route('logout') }}">
+                                    this.closest('form').submit();"
+                                    href="{{ route('logout') }}">
                                     {{ __('Sign Out') }}
                                 </a>
                             </form>

@@ -3,7 +3,9 @@
 use App\Http\Controllers\CalorieController;
 use App\Http\Controllers\ExerciseEntryController;
 use App\Http\Controllers\FoodEntryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::resource('/post', PostController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -33,14 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/food_entries/create', [FoodEntryController::class, 'create'])->name('food_entries.create');
-    Route::get('/food_entries/create', [FoodEntryController::class, 'index'])->name('food_entries.create');
-    Route::post('/food_entries', [FoodEntryController::class, 'store'])->name('food_entries.store');
-    Route::get('/exercise_entries/create', [ExerciseEntryController::class, 'create'])->name('exercise_entries.create');
-    Route::get('/exercise_entries/create', [ExerciseEntryController::class, 'index'])->name('exercise_entries.create');
-    Route::post('/exercise_entries', [ExerciseEntryController::class, 'store'])->name('exercise_entries.store');
-    Route::get('/food', [FoodEntryController::class, 'index'])->name('food');
-    Route::get('/exercise', [ExerciseEntryController::class, 'index'])->name('exercise');
-    Route::post('/calorie/goal', [CalorieController::class, 'setGoal'])->name('calorie.goal');
+    Route::resource('/tasks', TaskController::class);
 });
 require __DIR__.'/auth.php';
